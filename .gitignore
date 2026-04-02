@@ -1,0 +1,47 @@
+# LaTeX
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.toc
+*.nav
+*.snm
+*.vrb
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+*.synctex(busy)
+
+# Stata
+*.smcl
+
+# Data (keep structure, ignore large files)
+Data/raw/*.csv
+Data/raw/*.xlsx
+Data/raw/*.xls
+Data/raw/*.zip
+Data/raw/*.dta
+Data/cleaned/*.dta
+!Data/raw/.gitkeep
+!Data/cleaned/.gitkeep
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+*.swp
+*.swo
+*~
+.vscode/
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# R
+.Rhistory
+.RData
+.Rproj.user/

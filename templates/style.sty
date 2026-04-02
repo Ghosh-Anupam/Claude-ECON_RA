@@ -1,0 +1,161 @@
+\mode<presentation>
+\let\oldframe\frame
+\renewcommand{\frame}{%
+  \oldframe
+  \let\olditemize\itemize
+  \renewcommand\itemize{\olditemize\addtolength{\itemsep}{1pt}}%
+}
+%%% 3pt bullet point spacing globally %%%
+\usetheme{CambridgeUS}
+\usecolortheme{default}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Headlines & Footlines %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Remove section titles from the header band
+\setbeamertemplate{headline}{
+  \leavevmode%
+  \hbox{%
+    \begin{beamercolorbox}[wd=0.5\paperwidth,ht=1ex,dp=1.5ex,left]{palette tertiary}%
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=0.5\paperwidth,ht=1ex,dp=1.5ex,right]{palette primary}%
+    \end{beamercolorbox}%
+  }%
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamerfont{author in head/foot}{series=\bfseries}
+\setbeamerfont{title in head/foot}{series=\bfseries}
+\setbeamerfont{date in head/foot}{series=\bfseries}
+\defbeamertemplate*{footline}{custom infolines}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2ex,dp=1.5ex,center]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\insertshortauthor\expandafter\beamer@ifempty\expandafter{\beamer@shortinstitute}{}{~~(\insertshortinstitute)}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2ex,dp=1.5ex,center]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\insertshorttitle
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2ex,dp=1.5ex,right]{date in head/foot}%
+    \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+\setbeamertemplate{footline}[custom infolines]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Font Sizes %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Itemized text sizes and colors
+\setbeamerfont{itemize/enumerate body}{size=\small} % or \footnotesize, \scriptsize, etc.
+\setbeamerfont{itemize/enumerate subbody}{size=\footnotesize} % for nested itemize
+\setbeamerfont{itemize/enumerate subsubbody}{size=\footnotesize} % for nested itemize
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Define colors
+\definecolor{headings}{HTML}{B31B1B}
+\definecolor{Logo1}{rgb}{0.6, 0.0, 0.0}
+\definecolor{Logo2}{rgb}{0.8, 0.0, 0.0}
+\definecolor{Logo3}{rgb}{0.24, 0.2, 0.12}
+\definecolor{Logo3B}{rgb}{0.55, 0.52, 0.54} %// Light Taupe
+\definecolor{Logo4}{rgb}{0.54, 0.2, 0.14} %// Brown
+\definecolor{Logo5}{rgb}{1.0, 0.97, 0.91}
+\definecolor{Logo6}{rgb}{0.41, 0.41, 0.41} %// Dark gray
+% Beamer color theme settings
+\setbeamercolor*{palette primary}{bg=Logo1, fg=white}
+\setbeamercolor*{palette secondary}{bg=Logo2, fg=white}
+\setbeamercolor*{palette tertiary}{bg=Logo3, fg=white}
+\setbeamercolor*{palette quaternary}{bg=Logo1, fg=white}
+\setbeamercolor{title}{fg=headings}
+\setbeamercolor{structure}{fg=Logo1}
+\setbeamercolor{section in toc}{fg=Logo1}
+% Packages
+% Itemize symbols
+\setbeamertemplate{itemize items}[ball]
+\setbeamertemplate{enumerate items}[circle]
+\setbeamertemplate{itemize subitem}{\scriptsize$\blacktriangleright$}
+\setbeamertemplate{itemize subsubitem}[circle]
+% Frame title continuation for references slide
+\setbeamertemplate{frametitle continuation}{\frametitle{\color{white}List of References}}
+% Fonts
+\setbeamerfont{footnote}{size=\tiny}
+\setbeamerfont{title}{size=\LARGE, series=\bfseries}
+\setbeamerfont{subtitle}{size=\large, shape=\itshape}
+\setbeamerfont{frametitle}{size=\large, series=\bfseries}
+\setbeamerfont{author}{size=\large}
+\setbeamerfont{date}{size=\small}
+\setbeamerfont{institute}{size=\small}
+\setbeamerfont{caption}{size=\scriptsize} % apply \small to all captions
+\setbeamertemplate{caption}[numbered]
+\setlength{\abovecaptionskip}{-1.2pt}
+\setlength{\belowcaptionskip}{10pt}
+%\RequirePackage{caption} % ensure the caption package is loaded
+%------- Footnote Setup --------------------------
+%\usepackage[hang,flushmargin]{footmisc}
+% Customize footnote appearance
+\setbeamertemplate{footnote}{%
+  \parindent=0pt%
+  \raggedright%
+  \tiny%
+  \hspace*{-0.5em}\insertfootnotemark\insertfootnotetext%
+}
+%\setbeamerfont{footnote}{size=\tiny}
+% Reduce footnote spacing
+\setlength{\footnotesep}{0.5\baselineskip}
+\setlength{\skip\footins}{0.5\baselineskip}
+% Tighten overall spacing
+\setlength{\parskip}{0pt}
+\linespread{0.5}
+\setlength{\itemsep}{0.5ex}
+%------- Beamer Font Size Setup --------------------------
+%Itemized text size
+%-----Roadmap Slides-------------------------------
+% (a) clear the top ribbon/headline
+%\setbeamertemplate{headline}{}
+% (b) use a normal TOC but colour only the current section in black+bold, all others gray
+\setbeamertemplate{section in toc}[sections numbered]
+% Color
+\setbeamercolor{section in toc}{fg=Logo3}
+\setbeamercolor{section in toc shaded}{fg=Logo3B}
+% Emphasis
+\setbeamerfont {section in toc}{series=\bfseries}
+\setbeamerfont {section in toc shaded}{ series=\mdseries}
+% Font Size
+\setbeamerfont{section in toc}{size=\large}
+\setbeamerfont{section in toc shaded}{size=\large}
+%------- Blocks----------------------------------
+\setbeamertemplate{blocks}[rounded]% [shadow=false]
+%-------- Section Title Pages-----------
+%\setbeamercolor{background canvas}{bg=Logo4}
+% Color
+\setbeamercolor{frametitle}{fg=Logo1}
+\setbeamercolor{subtitle}{fg=Logo1}
+\setbeamercolor{footnote}{fg=gray}
+% Caption Color
+\usepackage{caption}
+\DeclareCaptionFont{myblue}{\color{Logo3}}
+\captionsetup{labelfont={myblue}} %, bf can be an option for bold font
+%Itemized Color
+\setbeamercolor{item}{fg=Logo3}
+\setbeamercolor{subitem}{fg=Logo3}
+\setbeamercolor{subsubitem}{fg=Logo3}
+%
+% Tighten overall spacing
+\setlength{\parskip}{0pt}
+\linespread{0.95}
+\setlength{\itemsep}{0.5em}
+\setlength{\leftmarginii}{0.75em} % Add this line to decrease subitem indentation
+\setlength{\leftmarginiii}{1em} % For subsubitems
+% ------------------------
+% Bibliography setup
+% Check out bibliography styles here-> https://www.overleaf.com/learn/latex/Biblatex_bibliography_styles
+% ------------------------
+% Required packages
+\usepackage[backend=bibtex, style=authoryear, backref=true, maxcitenames=2]{biblatex}
+\addbibresource{references.bib}
+%
+% Gray citation color
+\usepackage{xcolor}
+\definecolor{mygray}{gray}{0.5}
+% Redefine citation commands to use gray
+\let\oldparencite\parencite
+\renewcommand{\parencite}[1]{\textcolor{mygray}{\oldparencite{#1}}}
+\let\oldtextcite\textcite
+\renewcommand{\textcite}[1]{\textcolor{mygray}{\oldtextcite{#1}}}
+% Make hyperlinks subtle but active
+\usepackage[colorlinks=true, linkcolor=black, urlcolor=blue, citecolor=black]{}
+\newcommand{\notrightarrow}{\not\rightarrow}

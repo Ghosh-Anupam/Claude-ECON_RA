@@ -1,0 +1,89 @@
+\documentclass[aspectratio=169]{beamer}
+%--------------------------------------------
+\usepackage{booktabs}
+\usepackage{style}
+\usepackage{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage{forest}
+\usetheme{default}
+\usepackage{tcolorbox}
+\usepackage{ulem}
+\usepackage{color}
+\usepackage{relsize}
+\usepackage{soul}
+\usepackage{caption}
+\usepackage[absolute, overlay]{textpos}
+\usepackage{pifont}
+\usepackage{amsmath,amsfonts,amssymb,amscd,amsthm}
+\usepackage{graphicx,xcolor,comment}
+\usepackage{enumerate}
+\usepackage{tikz}
+\usepackage{threeparttable}
+\usepackage{float}
+%------------ Title Page ---------------------------------------
+\title[{[SHORT TITLE]}]
+{[FULL PAPER TITLE]}
+\subtitle{{[Subtitle]}}
+
+\author[{[A. LastName]}]
+{[Author Name]\textsuperscript{1}}
+
+\institute[{[INSTITUTION SHORT]}]
+{$^{1}$[Institution Full Name]\\
+%\textbf{Job Market Paper} \\
+}
+\date[{\today}]
+{\footnotesize{}}
+%--------------------------------------------
+%--------- Sections/Slides Included ----------------------
+\begin{document}
+%--------- Title Slide ----------------------
+\begin{frame}
+{\titlepage
+}\end{frame}
+
+%% Uncomment to enable automatic Roadmap slides before each section:
+%\AtBeginSection[]{
+%  {
+%    \setbeamertemplate{headline}{}%
+%    \begin{frame}
+%    \frametitle{Roadmap}
+%      \small
+%      \tableofcontents[
+%        currentsection,
+%        hideallsubsections,
+%        sectionstyle=show/shaded
+%      ]
+%    \end{frame}
+%  }
+%}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Introduction}
+\input{2-Presentation/1-Motivation}
+\input{2-Presentation/2-This Paper}
+\input{2-Presentation/3-Preview}
+\input{2-Presentation/4-Contribution & Past Lit}
+
+\section{Data}
+\input{2-Presentation/5-Data & Sample}
+
+\section{Empirical Design \& Trends}
+\input{2-Presentation/6A-Descriptive}
+\input{2-Presentation/6B-Design}
+
+\section{Main Results}
+\input{2-Presentation/7A-Core Results}
+\input{2-Presentation/7B-Mechanism}
+\input{2-Presentation/8-Robustness}
+
+\section{Heterogeneity}
+\input{2-Presentation/9-Heterogeneity}
+
+\section{Conclusion}
+\input{2-Presentation/10-Conclusion}
+\input{2-Presentation/11-Appendix}
+%--------------------------------------------------------------
+
+\end{document}
