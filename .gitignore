@@ -45,3 +45,6 @@ __pycache__/
 .Rhistory
 .RData
 .Rproj.user/
+
+# Copyrighted textbooks (keep local, do not upload)
+templates/textbooks/*.pdf
